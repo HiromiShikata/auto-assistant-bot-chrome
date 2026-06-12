@@ -8,12 +8,8 @@ on:
   pull_request:
 
 jobs:
-  build:
+  format:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version:
-          - "3.10"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,4 +21,4 @@ jobs:
           rm --recursive --force "$AGENT_TOOLSDIRECTORY"
           df --human-readable
       - name: Test with pytest
-        run: docker-compose up --abort-on-container-exit
+        run: docker compose up --abort-on-container-exit
