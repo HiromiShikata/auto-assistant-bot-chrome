@@ -25,4 +25,4 @@ jobs:
           rm --recursive --force "$AGENT_TOOLSDIRECTORY"
           df --human-readable
       - name: Test with pytest
-        run: docker-compose up --abort-on-container-exit
+        run: docker compose up --abort-on-container-exit
